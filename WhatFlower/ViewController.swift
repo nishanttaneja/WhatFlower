@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     }
     
     //MARK:- Vision
+    /// This function performs the classification task for the user-selected image. This function identifies the name of the selected flower using a Flower Classifier MLModel.
     private func detectFlower(_ image: CIImage) {
         guard let model = try? VNCoreMLModel(for: FlowerClassifier().model) else {fatalError("error loading MLModel")}
         let request = VNCoreMLRequest(model: model) { (request, error) in
@@ -51,7 +52,8 @@ class ViewController: UIViewController {
         do {try handler.perform([request])}
         catch {print(error)}
     }
-    
+    //MARK:- Networking
+    /// This function performs a request using Alamofire to fetch Data from the Internet. Alamofire is a framework which is used for Networking.
     private func requestDescription(for flowerName: String) {
         let urlString = "https://en.wikipedia.org/w/api.php"
         let parameters: [String:String] = [
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
             self.parse(data)
         }
     }
-    
+    /// This function parses JSON data using SwiftyJSON. SwiftyJSON is a framework which is used for JSON data parsing.
     private func parse(_ data: JSON) {
         let pageId = data["query"]["pageids"][0].stringValue
         let flowerData = data["query"]["pages"][pageId]
@@ -80,6 +82,8 @@ class ViewController: UIViewController {
         updateUIWith(description, imageUrlString)
     }
     
+    //MARK:- UI Customisation
+    /// This function updates the UI with freshly fetched data from Internet. Updates description and image. If no image is available then user selected image is displayed.
     private func updateUIWith(_ description: String, _ imageUrlString: String) {
         descriptionLabel.text = description
         imageView.sd_setImage(with: URL(string: imageUrlString)) { (image, error, cache, url) in
