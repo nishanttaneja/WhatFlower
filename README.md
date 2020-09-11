@@ -9,19 +9,11 @@ An iOS Application which identifies the image of a flower using a FlowerClassifi
 ## Technologies
 - <a href="http://developer.apple.com/documentation/swift"> Swift Programming Language </a>
 - Storyboard
-- <a href="https://developer.apple.com/documentation/uikit"> UIKit </a> 
-    - <a href="https://developer.apple.com/documentation/uikit/uinavigationcontroller">  UINavigationController </a> | <a href="https://developer.apple.com/documentation/uikit/uinavigationcontrollerdelegate"> UINavigationControllerDelegate </a> | <a href="https://developer.apple.com/documentation/uikit/uibarbuttonitem"> UIBarButtonItem </a>
-    - <a href="https://developer.apple.com/documentation/uikit/uiimageview"> UIImageView </a> | <a href=""> UILabel </a>
-    - <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontroller"> UIImagePickerController </a> | <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontrollerdelegate"> UIImagePickerControllerDelegate </a>
-- CaffeModel | <a href="https://drive.google.com/uc?export=download&id=13v58uJqi_pAXKoBa2J7mZ7sLkaSRVUBb"> Download Flower Classifier </a>
+- <a href="https://developer.apple.com/documentation/uikit"> UIKit </a> - <a href="https://developer.apple.com/documentation/uikit/uinavigationcontroller">  UINavigationController </a> | <a href="https://developer.apple.com/documentation/uikit/uinavigationcontrollerdelegate"> UINavigationControllerDelegate </a> | <a href="https://developer.apple.com/documentation/uikit/uibarbuttonitem"> UIBarButtonItem </a> | <a href="https://developer.apple.com/documentation/uikit/uiimageview"> UIImageView </a> | <a href=""> UILabel </a> | <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontroller"> UIImagePickerController </a> | <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontrollerdelegate"> UIImagePickerControllerDelegate </a>
+- CaffeModel - <a href="https://drive.google.com/uc?export=download&id=13v58uJqi_pAXKoBa2J7mZ7sLkaSRVUBb"> Download Flower Classifier </a>
 - <a href="https://github.com/apple/coremltools"> CoreMLTools </a> 
-- <a href="https://developer.apple.com/documentation/coreimage"> Core Image </a> 
-    - <a href="https://developer.apple.com/documentation/coreimage/ciimage"> CIImage </a>
-- <a href="https://developer.apple.com/documentation/vision"> Vision </a>
-    - <a href="https://developer.apple.com/documentation/vision/vncoremlmodel"> VNCoreMLModel </a>
-    - <a href="https://developer.apple.com/documentation/vision/vncoremlrequest"> VNCoreMLRequest </a>
-    - <a href="https://developer.apple.com/documentation/vision/vnclassificationobservation"> VNClassificationObservation </a>
-    - <a href="https://developer.apple.com/documentation/vision/vnimagerequesthandler"> VNImageRequestHandler </a>
+- <a href="https://developer.apple.com/documentation/coreimage"> Core Image </a> - <a href="https://developer.apple.com/documentation/coreimage/ciimage"> CIImage </a>
+- <a href="https://developer.apple.com/documentation/vision"> Vision </a> - <a href="https://developer.apple.com/documentation/vision/vncoremlmodel"> VNCoreMLModel </a> | <a href="https://developer.apple.com/documentation/vision/vncoremlrequest"> VNCoreMLRequest </a> | <a href="https://developer.apple.com/documentation/vision/vnclassificationobservation"> VNClassificationObservation </a> | <a href="https://developer.apple.com/documentation/vision/vnimagerequesthandler"> VNImageRequestHandler </a>
 - <a href="https://developer.apple.com/documentation/dispatch/dispatchqueue"> DispatchQueue </a> | <a href="https://developer.apple.com/documentation/dispatch/dispatchqueue/1781006-main"> main </a>
 - <a href="https://cocoapods.org"> CocoaPods </a> - <a href="https://github.com/Alamofire/Alamofire"> Alamofire </a> | <a href="https://github.com/SwiftyJSON/SwiftyJSON"> SwiftyJSON </a> | <a href="https://github.com/SDWebImage/SDWebImage"> SDWebImage </a> | <a href="https://github.com/yamoridon/ColorThiefSwift"> ColorThiefSwift </a>
 
