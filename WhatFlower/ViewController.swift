@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Vision
 
 class ViewController: UIViewController {
     //MARK:- Initialise
@@ -29,7 +30,32 @@ class ViewController: UIViewController {
     }
     
     //MARK:- Vision
-    private func detectFlower(_ image: CIImage) {}
+    private func detectFlower(_ image: CIImage) {
+        guard let model = try? VNCoreMLModel(for: FlowerClassifier().model) else {fatalError("error loading MLModel")}
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let result = request.results?.first as? VNClassificationObservation else {fatalError("classification error")}
+            let flowerName = result.identifier
+            self.navigationItem.title = flowerName.capitalized
+            self.requestDescription(for: flowerName)
+        }
+        let handler = VNImageRequestHandler(ciImage: image)
+        do {try handler.perform([request])}
+        catch {print(error)}
+    }
+    
+    private func requestDescription(for flowerName: String) {
+        let parameters: [String:String] = [
+            "format": "json",
+            "action": "query",
+            "prop": "extracts|pageimages",
+            "exintro": "",
+            "explaintext": "",
+            "title": flowerName,
+            "redirects": "1",
+            "pithumbsize": "500",
+            "indexpageids": ""
+        ]
+    }
 }
 
 //MARK:- UIImagePickerController Delegate
