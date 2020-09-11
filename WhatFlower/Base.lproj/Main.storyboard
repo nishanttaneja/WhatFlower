@@ -50,8 +50,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="WhatFlower" id="poc-b1-dkG">
-                        <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="XqB-gX-YiI"/>
+                        <barButtonItem key="rightBarButtonItem" image="camera" catalog="system" id="XqB-gX-YiI">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" id="eIo-7M-yPY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="aNb-Xh-ogf" id="6Tk-S9-qCZ"/>
+                        <outlet property="imageView" destination="L7r-jX-KGT" id="hQz-qR-7bF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
