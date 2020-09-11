@@ -17,11 +17,7 @@
 		B4DA82B5250B383200DC92DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82B3250B383200DC92DE /* Main.storyboard */; };
 		B4DA82B7250B383300DC92DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82B6250B383300DC92DE /* Assets.xcassets */; };
 		B4DA82BA250B383300DC92DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82B8250B383300DC92DE /* LaunchScreen.storyboard */; };
-		B4DA82C6250B541700DC92DE /* deploy.prototxt in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82C3250B540A00DC92DE /* deploy.prototxt */; };
-		B4DA82C7250B541700DC92DE /* flower-labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82C4250B540A00DC92DE /* flower-labels.txt */; };
-		B4DA82C8250B541700DC92DE /* oxford102.caffemodel in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82C5250B541700DC92DE /* oxford102.caffemodel */; };
 		B4DA82CA250B547800DC92DE /* convert-script.py in Resources */ = {isa = PBXBuildFile; fileRef = B4DA82C9250B547800DC92DE /* convert-script.py */; };
-		B4DA82CC250B604800DC92DE /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4DA82CB250B604800DC92DE /* FlowerClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +36,7 @@
 		B4DA82B9250B383300DC92DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4DA82BB250B383300DC92DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4DA82C1250B409E00DC92DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B4DA82C3250B540A00DC92DE /* deploy.prototxt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = deploy.prototxt; sourceTree = "<group>"; };
-		B4DA82C4250B540A00DC92DE /* flower-labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "flower-labels.txt"; sourceTree = "<group>"; };
-		B4DA82C5250B541700DC92DE /* oxford102.caffemodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = oxford102.caffemodel; sourceTree = "<group>"; };
 		B4DA82C9250B547800DC92DE /* convert-script.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "convert-script.py"; sourceTree = "<group>"; };
-		B4DA82CB250B604800DC92DE /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,24 +97,12 @@
 				B4DA82AF250B383200DC92DE /* SceneDelegate.swift */,
 				B4DA82C9250B547800DC92DE /* convert-script.py */,
 				B4DA82B1250B383200DC92DE /* ViewController.swift */,
-				B4DA82CB250B604800DC92DE /* FlowerClassifier.mlmodel */,
-				B4DA82C2250B53F600DC92DE /* Flower Classifier */,
 				B4DA82B3250B383200DC92DE /* Main.storyboard */,
 				B4DA82B6250B383300DC92DE /* Assets.xcassets */,
 				B4DA82B8250B383300DC92DE /* LaunchScreen.storyboard */,
 				B4DA82BB250B383300DC92DE /* Info.plist */,
 			);
 			path = WhatFlower;
-			sourceTree = "<group>";
-		};
-		B4DA82C2250B53F600DC92DE /* Flower Classifier */ = {
-			isa = PBXGroup;
-			children = (
-				B4DA82C3250B540A00DC92DE /* deploy.prototxt */,
-				B4DA82C4250B540A00DC92DE /* flower-labels.txt */,
-				B4DA82C5250B541700DC92DE /* oxford102.caffemodel */,
-			);
-			path = "Flower Classifier";
 			sourceTree = "<group>";
 		};
 		D7C0C1A14EF70DACB69BCF03 /* Frameworks */ = {
@@ -195,13 +175,10 @@
 			files = (
 				B4DA82BA250B383300DC92DE /* LaunchScreen.storyboard in Resources */,
 				B4DA82B7250B383300DC92DE /* Assets.xcassets in Resources */,
-				B4DA82C6250B541700DC92DE /* deploy.prototxt in Resources */,
-				B4DA82C7250B541700DC92DE /* flower-labels.txt in Resources */,
 				B429A490250B7B1300064347 /* Home.png in Resources */,
 				B429A491250B7B1300064347 /* Result.png in Resources */,
 				B429A492250B7B1300064347 /* SelectPhoto.png in Resources */,
 				B4DA82B5250B383200DC92DE /* Main.storyboard in Resources */,
-				B4DA82C8250B541700DC92DE /* oxford102.caffemodel in Resources */,
 				B4DA82CA250B547800DC92DE /* convert-script.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4DA82CC250B604800DC92DE /* FlowerClassifier.mlmodel in Sources */,
 				B4DA82B2250B383200DC92DE /* ViewController.swift in Sources */,
 				B4DA82AE250B383200DC92DE /* AppDelegate.swift in Sources */,
 				B4DA82B0250B383200DC92DE /* SceneDelegate.swift in Sources */,
