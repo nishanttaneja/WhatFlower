@@ -13,8 +13,8 @@ An iOS Application which identifies the image of a flower using a FlowerClassifi
     - <a href="https://developer.apple.com/documentation/uikit/uinavigationcontroller">  UINavigationController </a> | <a href="https://developer.apple.com/documentation/uikit/uinavigationcontrollerdelegate"> UINavigationControllerDelegate </a> | <a href="https://developer.apple.com/documentation/uikit/uibarbuttonitem"> UIBarButtonItem </a>
     - <a href="https://developer.apple.com/documentation/uikit/uiimageview"> UIImageView </a> | <a href=""> UILabel </a>
     - <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontroller"> UIImagePickerController </a> | <a href="https://developer.apple.com/documentation/uikit/uiimagepickercontrollerdelegate"> UIImagePickerControllerDelegate </a>
-- <a href=""> CaffeModel </a> | <a href="https://drive.google.com/uc?export=download&id=13v58uJqi_pAXKoBa2J7mZ7sLkaSRVUBb"> Download Flower Classifier </a>
-- <a href=""> CoreMLTools </a> 
+- CaffeModel | <a href="https://drive.google.com/uc?export=download&id=13v58uJqi_pAXKoBa2J7mZ7sLkaSRVUBb"> Download Flower Classifier </a>
+- <a href="https://github.com/apple/coremltools"> CoreMLTools </a> 
 - <a href="https://developer.apple.com/documentation/coreimage"> Core Image </a> 
     - <a href="https://developer.apple.com/documentation/coreimage/ciimage"> CIImage </a>
 - <a href="https://developer.apple.com/documentation/vision"> Vision </a>
