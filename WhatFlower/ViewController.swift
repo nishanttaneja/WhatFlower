@@ -16,8 +16,13 @@ import ColorThiefSwift
 class ViewController: UIViewController {
     //MARK:- Initialise
     let imagePicker = UIImagePickerController()
+    var selectedImage: UIImage?
     
     //MARK:- Override ViewLifecycle Method
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = ColorThief.getColor(from: imageView.image!)?.makeUIColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // ImagePicker Delegate
@@ -78,7 +83,11 @@ class ViewController: UIViewController {
     private func updateUIWith(_ description: String, _ imageUrlString: String) {
         descriptionLabel.text = description
         imageView.sd_setImage(with: URL(string: imageUrlString)) { (image, error, cache, url) in
-            guard let fetchedImage = image else {print("error loading image"); return}
+            guard let fetchedImage = image else {
+                print("error loading image")
+                self.imageView.image = self.selectedImage
+                return
+            }
             if let dominantColor = ColorThief.getColor(from: fetchedImage) {
                 DispatchQueue.main.async {self.view.backgroundColor = dominantColor.makeUIColor()}
             }
@@ -91,7 +100,7 @@ class ViewController: UIViewController {
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
-            imageView.image = selectedImage
+            self.selectedImage = selectedImage
             guard let image = CIImage(image: selectedImage) else {fatalError("error converting UIImage to CIImage")}
             detectFlower(image)
             imagePicker.dismiss(animated: true, completion: nil)
