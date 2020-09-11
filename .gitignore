@@ -4,6 +4,7 @@
 
 # Flower Classification Model
 Flower Classifier/
+*.mlmodel
 
 ## User settings
 xcuserdata/
