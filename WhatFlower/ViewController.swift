@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             "indexpageids": ""
         ]
         Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON { (response) in
-            if response.result.isFailure {print("HTTP Request error"); return}
+            if response.result.isFailure {print("connection issues"); return}
             let data = JSON(response.result.value)
             self.parse(data)
         }
@@ -76,8 +76,13 @@ class ViewController: UIViewController {
     }
     
     private func updateUIWith(_ description: String, _ imageUrlString: String) {
-        DispatchQueue.main.async {
-            self.descriptionLabel.text = description
+        descriptionLabel.text = description
+        imageView.sd_setImage(with: URL(string: imageUrlString)) { (image, error, cache, url) in
+            guard let fetchedImage = image else {print("error loading image"); return}
+            if let dominantColor = ColorThief.getColor(from: fetchedImage) {
+                DispatchQueue.main.async {self.view.backgroundColor = dominantColor.makeUIColor()}
+            }
+            else {print("can't get dominant color")}
         }
     }
 }
