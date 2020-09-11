@@ -9,6 +9,9 @@
 import UIKit
 import Vision
 import Alamofire
+import SwiftyJSON
+import SDWebImage
+import ColorThiefSwift
 
 class ViewController: UIViewController {
     //MARK:- Initialise
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
     }
     
     private func requestDescription(for flowerName: String) {
+        let urlString = "https://en.wikipedia.org/w/api.php"
         let parameters: [String:String] = [
             "format": "json",
             "action": "query",
@@ -56,8 +60,24 @@ class ViewController: UIViewController {
             "pithumbsize": "500",
             "indexpageids": ""
         ]
-        Alamofire.request("https://en.wikipedia.org/w/api.php", method: .get, parameters: parameters).responseJSON { (response) in
+        Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON { (response) in
             if response.result.isFailure {print("HTTP Request error"); return}
+            let data = JSON(response.result.value)
+            self.parse(data)
+        }
+    }
+    
+    private func parse(_ data: JSON) {
+        let pageId = data["query"]["pageids"][0].stringValue
+        let flowerData = data["query"]["pages"][pageId]
+        let description = flowerData["extract"].stringValue
+        let imageUrlString = flowerData["thumbnail"]["source"].stringValue
+        updateUIWith(description, imageUrlString)
+    }
+    
+    private func updateUIWith(_ description: String, _ imageUrlString: String) {
+        DispatchQueue.main.async {
+            self.descriptionLabel.text = description
         }
     }
 }
