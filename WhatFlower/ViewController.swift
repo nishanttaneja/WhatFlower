@@ -8,6 +8,7 @@
 
 import UIKit
 import Vision
+import Alamofire
 
 class ViewController: UIViewController {
     //MARK:- Initialise
@@ -50,11 +51,14 @@ class ViewController: UIViewController {
             "prop": "extracts|pageimages",
             "exintro": "",
             "explaintext": "",
-            "title": flowerName,
+            "titles": flowerName,
             "redirects": "1",
             "pithumbsize": "500",
             "indexpageids": ""
         ]
+        Alamofire.request("https://en.wikipedia.org/w/api.php", method: .get, parameters: parameters).responseJSON { (response) in
+            if response.result.isFailure {print("HTTP Request error"); return}
+        }
     }
 }
 
